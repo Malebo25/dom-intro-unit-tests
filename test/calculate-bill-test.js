@@ -69,4 +69,120 @@ describe("Calculate-Bill Tests", function (){
     });
 
 
- });
+});
+ 
+describe(" calculate bill warning and critical levels", function (){
+    it("it should return a class name of warning if warning level of 30 is reached  ", function () {
+        let calculateBill = calculateBillFunction();
+       
+
+       
+        calculateBill.getwarningLevel();
+
+        calculateBill.getcriticalLevel();
+
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        // calculateBill.Totalvalue("call");
+        // calculateBill.Totalvalue("call");
+        // calculateBill.Totalvalue("call");
+        // calculateBill.Totalvalue("call");
+        // calculateBill.Totalvalue("call");
+        // calculateBill.Totalvalue("call");
+
+        
+        
+
+        
+        assert.equal(33, calculateBill.getOverallTotal());
+        assert.equal("warning", calculateBill.className());
+        
+    });
+
+    it("it should return a class name of critical if warning level of 50 is reached  ", function () {
+        let calculateBill = calculateBillFunction();
+       
+
+       
+        calculateBill.getwarningLevel();
+
+        calculateBill.getcriticalLevel();
+
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+
+
+        
+        
+
+        
+        assert.equal(55, calculateBill.getOverallTotal());
+        assert.equal("critical", calculateBill.className());
+        
+    });
+
+     it("it should return a class name of warning if warning level of 30 is reached  ", function () {
+        let calculateBill = calculateBillFunction();
+       
+
+       
+        calculateBill.getwarningLevel();
+
+        calculateBill.getcriticalLevel();
+
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("call");
+        calculateBill.Totalvalue("sms");
+        calculateBill.Totalvalue("sms");
+        calculateBill.Totalvalue("SMS");
+        calculateBill.Totalvalue("SMS");
+        calculateBill.Totalvalue("SMS");
+        calculateBill.Totalvalue("SMS");
+        calculateBill.Totalvalue("SMS");
+        calculateBill.Totalvalue("SMS");
+        calculateBill.Totalvalue("SMS");
+
+        
+        
+
+        
+        assert.equal(31.5, calculateBill.getOverallTotal());
+        assert.equal("warning", calculateBill.className());
+        
+    });
+});
