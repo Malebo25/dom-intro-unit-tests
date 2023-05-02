@@ -1,6 +1,6 @@
 function calculateBillFunction() {
   var overallTotal = 0;
-  var userValue = 0;
+  var userValue = "";
   var Warning = 30;
   var Critical= 50;
 

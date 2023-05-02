@@ -1,57 +1,53 @@
-// get a reference to the textbox where the bill type is to be entered
-const billText = document.querySelector(".billTypeText");
+function textBillFunction() {
+    var total = 0;
+    var userString = "";
+    var warning = 30;
+    var critical = 50;
 
-//get a reference to the add button
-const addButton = document.querySelector(".addToBillBtn");
 
-const addCall = document.querySelector(".callTotalOne");
+    function stringTotal(userRecord) {
+        userString = userRecord.split(",");
+        for (var i = 0; i < userString.length; i++){
+            var userValue = userString[i].trim();
+            
+            if (userValue.toLowerCase() == "call") {
+                total += 2.75;
+            }
+            if (userValue.toLowerCase() == "sms") {
+                total += 0.75;
+            }
 
-const addSms = document.querySelector(".smsTotalOne");
-const errorElement = document.querySelector(".error");
-
-//create a variable that will keep track of the total bill
-const Total = document.querySelector(".totalOne");
-
-//add an event listener for when the add button is pressed
-
-var totalCalls = 0;
-var totalsms = 0;
-function textBillTotal(){
-    // get the value entered in the billType textfield
-    var billTyped = billText.value.trim();
-    var billTypeEnteredtwo = billTyped.toLowerCase();
-    // update the correct total
-    if (billTypeEnteredtwo === "call"){
-        totalCalls += 2.75
+        }
+        return total;
     }
-    else if (billTypeEnteredtwo === "sms"){
-        totalsms += 0.75;
+    function getTextTotal() {
+        return total;
     }
-   
+        
+    function getwarning(){
+        return warning;
+    }
+    function getcritical(){
+        return critical;
+    }
+
+    function classname() {
+        if (getTextTotal() >= getcritical()) {
+            return "critical";
+        }
+        if (getTextTotal() >= getwarning()) {
+            return "warning";
+        }
+    }
     
-    //update the totals that is displayed on the screen.
-    addCall.innerHTML = totalCalls.toFixed(2);
-    addSms.innerHTML = totalsms.toFixed(2);
-    var totalCost = totalCalls + totalsms;
-    Total.innerHTML = totalCost.toFixed(2);
-    
-    
-    if (totalCost>=30 && totalCost <50){
-        // adding the danger class will make the text red
-        Total.classList.add("warning");
+    return {
+        stringTotal,
+        getTextTotal,
+        getcritical,
+        getwarning,
+        classname
     }
-    else if (totalCost >= 50){
-        Total.classList.add("danger");
 
-    }
+
 
 }
-
-
-
-addButton.addEventListener('click', textBillTotal);
-
-//in the event listener check if the value in the bill type textbox is 'sms' or 'call'
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen
