@@ -7,7 +7,7 @@ function calculateBillFunction() {
     if (userValue.toLowerCase() == "call") {
       overallTotal += 2.75;
     }
-    if (userValue.toLoweCase() == "sms") {
+    if (userValue.toLowerCase() == "sms") {
       overallTotal += 0.75;
     }
   }
