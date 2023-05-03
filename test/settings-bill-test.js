@@ -164,7 +164,7 @@ describe("use values", function (){
 
 
 describe("warning and critical level", function (){
-    it("it should return a class name of warning if warning level is reached  ", function () {
+    it("it should return a class name of warning if warning level is reached and critical if critical level is reached ; should also test the updated classnames when the warning and critical levels are updated", function () {
         let settingsBill = BillWithSettings();
        
 
@@ -182,7 +182,39 @@ describe("warning and critical level", function (){
         // settingsBill.sendSms();
 
         assert.equal("warning", settingsBill.totalClassName());
-        // assert.equal("critical", settingsBill.totalClassName());
+        
+        settingsBill.setWarningLevel(8);
+        settingsBill.setCriticalLevel(15);
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        
+        
+    
+        // settingsBill.makeCall();
+        // settingsBill.makeCall();
+
+        assert.equal(9.45,settingsBill.getTotalCost())
+        assert.equal("warning", settingsBill.totalClassName());
+
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+        settingsBill.makeCall();
+
+        assert.equal(16.2,settingsBill.getTotalCost())
+        assert.equal("critical", settingsBill.totalClassName());
+        
+        
+        
+
+
+            
     });
 
     it("it should return a class name of critical if critical level is reached  ", function () {
