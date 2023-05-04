@@ -178,8 +178,7 @@ describe("warning and critical level", function (){
         settingsBill.makeCall();
         settingsBill.makeCall();
         settingsBill.makeCall();
-        // settingsBill.sendSms();
-        // settingsBill.sendSms();
+        
 
         assert.equal("warning", settingsBill.totalClassName());
         
@@ -190,9 +189,8 @@ describe("warning and critical level", function (){
         settingsBill.makeCall();
         
         
-    
-        // settingsBill.makeCall();
-        // settingsBill.makeCall();
+
+        
 
         assert.equal(9.45,settingsBill.getTotalCost())
         assert.equal("warning", settingsBill.totalClassName());
